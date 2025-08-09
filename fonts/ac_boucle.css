@@ -1,0 +1,9 @@
+@font-face {
+	font-family: 'AC Boucle';
+	src: url('../fonts/ac_boucle.eot'); /* IE 9 Compatibility Mode */
+	src: url('../fonts/ac_boucle.eot?#iefix') format('embedded-opentype'), /* IE < 9 */
+		url('../fonts/ac_boucle.woff2') format('woff2'), /* Super Modern Browsers */
+		url('../fonts/ac_boucle.woff') format('woff'), /* Firefox >= 3.6, any other modern browser */
+		url('../fonts/ac_boucle.ttf') format('truetype'), /* Safari, Android, iOS */
+		url('../fonts/ac_boucle.svg#ac_boucle') format('svg'); /* Chrome < 4, Legacy iOS */
+}

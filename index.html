@@ -1,0 +1,844 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>TITOV PRODUCTION</title>
+    <script src="https://cdn.jsdelivr.net/npm/gsap@3.13.0/dist/gsap.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/gsap@3.13.0/dist/ScrollTrigger.min.js"></script>
+    <link rel="stylesheet" href="./fonts/ac_boucle.css" />
+    <link rel="stylesheet" href="./reset.css" />
+    <link rel="stylesheet" href="./style.css" />
+    <link
+      rel="stylesheet"
+      href="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.css"
+    />
+  </head>
+  <body>
+    <header class="header">
+      <div class="container">
+        <div class="header__menu">
+          <h2 class="header__title">TITOV PRODUCTION</h2>
+
+          <nav class="header__nav">
+            <ul class="header__list">
+              <li class="header__item">
+                <a href="#about" class="header__link">Об авторе</a>
+              </li>
+              <li class="header__item">
+                <a href="#portfolio" class="header__link">Портфолио</a>
+              </li>
+              <li class="header__item">
+                <a href="#services" class="header__link">Услуги</a>
+              </li>
+
+              <li class="header__item">
+                <a href="#contact" class="header__link">Контакты</a>
+              </li>
+            </ul>
+          </nav>
+
+          <div>
+            <button class="header__button">Оставить заявку</button>
+          </div>
+        </div>
+      </div>
+    </header>
+
+    <main>
+      <section class="hero">
+        <div class="container">
+          <div class="hero__content">
+            <h1 class="hero__title" id="intro-text">
+              Давайте создавать музыку вместе
+            </h1>
+          </div>
+        </div>
+      </section>
+
+      <section class="about" id="about">
+        <div class="container">
+          <div class="about__block">
+            <h2 class="about__title">Об авторе</h2>
+            <div class="about__content">
+              <div class="about__inner">
+                <div class="about__photo">
+                  <img
+                    src="/images/SERGEY-TITOV-PRODUCTION.jpg"
+                    alt="TITOV PRODUCTION"
+                    class="about__image"
+                  />
+                </div>
+                <div class="about__text">
+                  <p>
+                    Я — <strong>SERGEY TITOV.</strong> Музыка для меня — это не
+                    просто профессия, а способ жизни. За последние годы мне
+                    посчастливилось поработать над сотнями треков и проектов,
+                    которые звучат на радиостанциях и в плейлистах СНГ и Европы.
+                    Сегодня на «Яндекс Музыке» мою музыку слушает более 1 000
+                    000 слушателей.
+                  </p>
+
+                  <p>
+                    Мне нравится искать новое звучание и объединяться с людьми,
+                    которые так же влюблены в музыку, как и я. Вместе с
+                    артистами
+                    <strong>FAVIA, ONEIL, ORGAN, Pokaraet, Nicky Four</strong> и
+                    многими другими мы создаём музыку, которая находит своего
+                    слушателя.
+                  </p>
+
+                  <p>
+                    В 2023 году трек <em>ULETAY</em> стал для меня особенной
+                    вехой — он принёс мне <strong>золотой диск</strong> и открыл
+                    двери к новым возможностям. В том же году я стал частью
+                    команды <strong>Максима Фадеева</strong> и резидентом студии
+                    <strong>MALFA</strong> и дистрибьютора
+                    <strong>OneRPM</strong>.
+                  </p>
+                </div>
+              </div>
+            </div>
+
+            <div class="awards-projects__columns">
+              <!-- Column 1: Награды -->
+              <div class="awards-projects__column">
+                <h2 class="awards-projects__title">Награды</h2>
+                <ul class="awards-projects__list">
+                  <li class="awards-projects__card">
+                    Сентябрь 2023 — Золотой диск за «ULETAY»
+                  </li>
+                  <li class="awards-projects__card">
+                    Май 2023 — Победитель конкурса Максима Фадеева
+                  </li>
+                  <li class="awards-projects__card">
+                    Ноябрь 2023 — Минск Арена, 10 000 зрителей
+                  </li>
+                  <li class="awards-projects__card">
+                    Награда VOICE за шоу «Crave Airlines»
+                  </li>
+                </ul>
+              </div>
+
+              <!-- Column 2: Проекты -->
+              <div class="awards-projects__column">
+                <h2 class="awards-projects__title">Проекты</h2>
+                <ul class="awards-projects__list">
+                  <li class="awards-projects__card">
+                    <strong>Фильмы:</strong> ПАПЫ, Бременские музыканты...
+                  </li>
+                  <li class="awards-projects__card">
+                    <strong>Сериалы:</strong> Мендельсон, Трепачи...
+                  </li>
+                  <li class="awards-projects__card">
+                    <strong>Шоу:</strong> Crave Airlines, Taboo...
+                  </li>
+                  <li class="awards-projects__card">
+                    <strong>Иммерсивные постановки:</strong> Щелкунчик...
+                  </li>
+                  <li class="awards-projects__card">
+                    <strong>Ледовые шоу:</strong> Шахерезада, Щелкунчик...
+                  </li>
+                  <li class="awards-projects__card">
+                    <strong>ТВ-проекты:</strong> Музыкальная интуиция, ТНТ...
+                  </li>
+                </ul>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <section id="portfolio">
+        <section class="audio-player" id="portfolio-audio">
+          <div class="container">
+            <h2 class="audio-player__title">Музыкальные платформы и треки</h2>
+            <div class="audio-player__content">
+              <div class="audio-player__grid">
+                <!-- Яндекс Музыка -->
+                <div class="audio-player__card">
+                  <h3 class="audio-player__subtitle">Yandex Music</h3>
+                  <a
+                    href="https://music.yandex.ru/artist/439874?utm_source=web&utm_medium=copy_link"
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    ><img
+                      src="./images/yandex-music.png"
+                      class="audio-player__item"
+                      alt="Слушать музыку TITOV на Яндекс Музыке"
+                  /></a>
+                </div>
+
+                <!-- VK Музыка -->
+                <div class="audio-player__card">
+                  <h3 class="audio-player__subtitle">VK Music</h3>
+                  <a
+                    href="https://vk.com/artist/titov"
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    ><img
+                      src="./images/vk-music.png"
+                      class="audio-player__item"
+                      alt="Слушать музыку TITOV на Яндекс Музыке"
+                  /></a>
+                </div>
+
+                <!-- Spotify -->
+                <div class="audio-player__card">
+                  <h3 class="audio-player__subtitle">Spotify</h3>
+                  <a
+                    href="https://open.spotify.com/artist/3SuQprUc8N1kIOs2Hm2mAk?si=7XhFvVFsTAmquvgoHPnTlg"
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    ><img
+                      src="./images/spotify-music.png"
+                      class="audio-player__item"
+                      alt="Слушать музыку TITOV на Spotify"
+                  /></a>
+                </div>
+
+                <!-- Apple Music -->
+                <div class="audio-player__card">
+                  <h3 class="audio-player__subtitle">Apple Music</h3>
+                  <a
+                    href="https://music.apple.com/us/artist/titov/375428776"
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    ><img
+                      src="./images/apple-music.png"
+                      class="audio-player__item"
+                      alt="Слушать музыку TITOV на Apple Music"
+                  /></a>
+                </div>
+              </div>
+
+              <!-- Кастомный плеер -->
+              <div class="custom-audio-player__container">
+                <!-- Левая колонка: плейлист -->
+                <div class="custom-audio-player__playlist">
+                  <h3 class="custom-audio-player__title">Треки</h3>
+
+                  <ul class="custom-audio-player__list">
+                    <li
+                      class="custom-audio-player__item"
+                      data-src="./audio/Track1.mp3"
+                    >
+                      <img
+                        src="./images/takty.jpeg"
+                        alt="TITOV, TUMANOVA, ARaveN - Такты"
+                      />
+                      <div class="custom-audio-player__info">
+                        <p>TITOV, TUMANOVA, ARaveN - Такты</p>
+                        <span>2:55</span>
+                      </div>
+                    </li>
+
+                    <li
+                      class="custom-audio-player__item"
+                      data-src="./audio/Track2.mp3"
+                    >
+                      <img
+                        src="./images/solution.jpeg"
+                        alt="ARaveN, Titov - Solution"
+                      />
+                      <div class="custom-audio-player__info">
+                        <p>ARaveN, Titov - Solution</p>
+                        <span>2:47</span>
+                      </div>
+                    </li>
+
+                    <li
+                      class="custom-audio-player__item"
+                      data-src="./audio/Track3.mp3"
+                    >
+                      <img
+                        src="./images/closed.png"
+                        alt="ONEIL, Titov - Closed"
+                      />
+                      <div class="custom-audio-player__info">
+                        <p>ONEIL, Titov - Closed</p>
+                        <span>2:42</span>
+                      </div>
+                    </li>
+
+                    <li
+                      class="custom-audio-player__item"
+                      data-src="./audio/Track4.mp3"
+                    >
+                      <img
+                        src="./images/your-love.jpeg"
+                        alt="Titov - Your Love"
+                      />
+                      <div class="custom-audio-player__info">
+                        <p>Titov - Your Love</p>
+                        <span>3:36</span>
+                      </div>
+                    </li>
+
+                    <li
+                      class="custom-audio-player__item"
+                      data-src="./audio/Track5.mp3"
+                    >
+                      <img
+                        src="./images/lose-control.jpeg"
+                        alt="LAYLI, Titov - Lose Control"
+                      />
+                      <div class="custom-audio-player__info">
+                        <p>LAYLI, Titov - Lose Control</p>
+                        <span>2:19</span>
+                      </div>
+                    </li>
+
+                    <li
+                      class="custom-audio-player__item"
+                      data-src="./audio/Track6.mp3"
+                    >
+                      <img
+                        src="./images/miracle.jpeg"
+                        alt="Titov, ARaveN - Miracle"
+                      />
+                      <div class="custom-audio-player__info">
+                        <p>Titov, ARaveN - Miracle</p>
+                        <span>2:39</span>
+                      </div>
+                    </li>
+
+                    <li
+                      class="custom-audio-player__item"
+                      data-src="./audio/Track7.mp3"
+                    >
+                      <img
+                        src="./images/titanium.jpeg"
+                        alt="Titov, Rachela - Titanium"
+                      />
+                      <div class="custom-audio-player__info">
+                        <p>Titov, Rachela - Titanium</p>
+                        <span>2:53</span>
+                      </div>
+                    </li>
+
+                    <li
+                      class="custom-audio-player__item"
+                      data-src="./audio/Track8.mp3"
+                    >
+                      <img
+                        src="./images/uletay.jpeg"
+                        alt="ONEIL, ORGAN, TITOV, FAVIA - Uletay"
+                      />
+                      <div class="custom-audio-player__info">
+                        <p>ONEIL, ORGAN, TITOV, FAVIA - Uletay</p>
+                        <span>2:41</span>
+                      </div>
+                    </li>
+
+                    <li
+                      class="custom-audio-player__item"
+                      data-src="./audio/Track9.mp3"
+                    >
+                      <img src="./images/own.jpeg" alt="ONEIL, TITOV - OWN" />
+                      <div class="custom-audio-player__info">
+                        <p>ONEIL, TITOV - OWN</p>
+                        <span>3:13</span>
+                      </div>
+                    </li>
+
+                    <li
+                      class="custom-audio-player__item"
+                      data-src="./audio/Track10.mp3"
+                    >
+                      <img
+                        src="./images/wonderful-live.png"
+                        alt="TITOV, ARaveN - Wonderful Live"
+                      />
+                      <div class="custom-audio-player__info">
+                        <p>TITOV, ARaveN - Wonderful Live</p>
+                        <span>2:28</span>
+                      </div>
+                    </li>
+
+                    <li
+                      class="custom-audio-player__item"
+                      data-src="./audio/Track11.mp3"
+                    >
+                      <img
+                        src="./images/move-to-the-music.jpeg"
+                        alt="ARaveN, Titov - Move to the Music"
+                      />
+                      <div class="custom-audio-player__info">
+                        <p>ARaveN, Titov - Move to the Music</p>
+                        <span>3:08</span>
+                      </div>
+                    </li>
+                  </ul>
+                </div>
+
+                <!-- Правая колонка: плеер -->
+                <div class="custom-audio-player__main">
+                  <div class="custom-audio-player__cover">
+                    <img
+                      id="audio-cover"
+                      src="./images/default-cover.png"
+                      alt="cover"
+                    />
+                  </div>
+                  <div class="custom-audio-player__info">
+                    <h4 id="audio-title">Выберите трек</h4>
+                  </div>
+                  <div class="custom-audio-player__controls">
+                    <div class="custom-audio-player__buttons">
+                      <button id="prev" class="custom-audio-player__button">
+                        ⏮
+                      </button>
+                      <button
+                        id="play-pause"
+                        class="custom-audio-player__button"
+                      >
+                        ▶
+                      </button>
+                      <button id="next" class="custom-audio-player__button">
+                        ⏭
+                      </button>
+                    </div>
+                    <input
+                      type="range"
+                      id="progress"
+                      value="0"
+                      min="0"
+                      max="100"
+                    />
+                  </div>
+
+                  <audio id="audio"></audio>
+                </div>
+              </div>
+            </div>
+          </div>
+        </section>
+
+        <section class="video-player" id="portfolio-video">
+          <div class="container">
+            <h2 class="video-player__title">Проекты, где я участвовал</h2>
+            <div class="custom-video-player__container">
+              <!-- Левая колонка: плейлист -->
+              <div class="custom-video-player__playlist">
+                <h3 class="custom-video-player__title">Видео</h3>
+                <ul class="custom-video-player__list">
+                  <li
+                    class="custom-video-player__item"
+                    data-src="./video/video1.mp4"
+                  >
+                    <img src="./images/preview1.jpg" alt="Превью видео 1" />
+                    <div class="custom-video-player__info">
+                      <p>TITOV, GOLSKIY - Autumn Leaf</p>
+                      <span>3:04</span>
+                    </div>
+                  </li>
+
+                  <li
+                    class="custom-video-player__item"
+                    data-src="./video/video2.mp4"
+                  >
+                    <img src="./images/preview2.jpg" alt="Превью видео 2" />
+                    <div class="custom-video-player__info">
+                      <p>You can stay - Anastasia Glebova (Starling), TITOV</p>
+                      <span>3:14</span>
+                    </div>
+                  </li>
+
+                  <li
+                    class="custom-video-player__item"
+                    data-src="./video/video3.mp4"
+                  >
+                    <img src="./images/preview3.jpg" alt="Превью видео 2" />
+                    <div class="custom-video-player__info">
+                      <p>ONEIL, ORGAN, Titov feat. FAVIA - ULETAY</p>
+                      <span>2:41</span>
+                    </div>
+                  </li>
+
+                  <li
+                    class="custom-video-player__item"
+                    data-src="./video/video4.mp4"
+                  >
+                    <img src="./images/preview4.jpg" alt="Превью видео 2" />
+                    <div class="custom-video-player__info">
+                      <p>Глюк’oZa Nostra (Titov Remix)</p>
+                      <span>1:47</span>
+                    </div>
+                  </li>
+
+                  <li
+                    class="custom-video-player__item"
+                    data-src="./video/video5.mp4"
+                  >
+                    <img src="./images/preview5.jpg" alt="Превью видео 2" />
+                    <div class="custom-video-player__info">
+                      <p>SEREBRO - Дай мне шанс (Премьера клипа 2025)</p>
+                      <span>3:16</span>
+                    </div>
+                  </li>
+
+                  <li
+                    class="custom-video-player__item"
+                    data-src="./video/video6.mp4"
+                  >
+                    <img src="./images/preview6.jpg" alt="Превью видео 2" />
+                    <div class="custom-video-player__info">
+                      <p>
+                        Милана Пономаренко - Прекрасное далёко ( Премьера клипа)
+                      </p>
+                      <span>3:00</span>
+                    </div>
+                  </li>
+
+                  <li
+                    class="custom-video-player__item"
+                    data-src="./video/video7.mp4"
+                  >
+                    <img src="./images/preview7.jpg" alt="Превью видео 2" />
+                    <div class="custom-video-player__info">
+                      <p>
+                        SHAMAN "Прямо по сердцу" КЛИП Музыка и слова М.Фадеев
+                      </p>
+                      <span>3:08</span>
+                    </div>
+                  </li>
+                </ul>
+              </div>
+
+              <!-- Правая колонка: плеер -->
+              <div class="custom-video-player__main">
+                <!-- Обложка + подпись до выбора видео -->
+                <div id="video-placeholder" class="video-placeholder">
+                  <img src="./images/video.png" alt="Видео превью" />
+                  <h4 id="video-title" class="video-title">Выберите видео</h4>
+                </div>
+
+                <div class="custom-video-player__controls">
+                  <!-- Видео -->
+                  <video
+                    id="video"
+                    width="100%"
+                    height="400"
+                    controls
+                    style="display: none"
+                  ></video>
+                </div>
+              </div>
+            </div>
+          </div>
+        </section>
+
+        <section class="photo-gallery" id="portfolio-gallery">
+          <div class="container">
+            <div class="gallery">
+              <div class="gallery-slide">
+                <img src="images/R5M_2228.jpg" class="h" alt="gallery image" />
+                <img src="images/slide8.jpg" class="h" alt="gallery image" />
+                <img src="images/slide1.jpg" class="v" alt="gallery image" />
+                <img src="images/R5M_0791.jpg" class="h" alt="gallery image" />
+                <img src="images/R5M_0834.jpg" class="h" alt="gallery image" />
+              </div>
+
+              <div class="gallery-slide">
+                <img src="images/slide7.jpg" class="h" alt="gallery image" />
+                <img src="images/R5M_1450.jpg" class="h" alt="gallery image" />
+                <img src="images/slide5.jpg" class="v" alt="gallery image" />
+                <img src="images/R5M_0192.jpg" class="h" alt="gallery image" />
+                <img src="images/R5M_2228.jpg" class="h" alt="gallery image" />
+              </div>
+              <!--
+            <div class="gallery-slide">
+              <img src="images/slide11.jpeg" class="v" alt="gallery image" />
+              <img src="images/slide12.jpeg" class="v" alt="gallery image" />
+            </div>
+            <div class="gallery-slide">
+              <img src="images/slide9.jpeg" class="v" alt="gallery image" />
+
+              <img src="images/slide10.jpeg" class="v" alt="gallery image" />
+              <img src="images/slide6.jpg" class="v" alt="gallery image" />
+              <img src="images/slide2.jpg" class="v" alt="gallery image" />
+              <img src="images/slide4.jpg" class="v" alt="gallery image" />
+              <img src="images/slide3.jpg" class="v" alt="gallery image" />
+            </div>-->
+            </div>
+          </div>
+        </section>
+      </section>
+
+      <!-- Модалка -->
+      <div class="photo-lightbox" id="photoLightbox">
+        <span class="photo-lightbox__close">&times;</span>
+        <img class="photo-lightbox__img" src="" alt="Просмотр фото" />
+        <button class="photo-lightbox__prev">‹</button>
+        <button class="photo-lightbox__next">›</button>
+      </div>
+
+      <section class="services" id="services">
+        <div class="container">
+          <h2 class="services__title">Услуги музыкального продакшена</h2>
+
+          <div class="swiper services-swiper">
+            <div class="swiper-wrapper">
+              <div class="swiper-slide">
+                <div class="service-card">
+                  <h3 class="service-card__title">🎹 Аранжировка</h3>
+                  <p class="service-card__price">от 50 000 ₽</p>
+                  <p class="service-card__text">
+                    Создание аранжировки под ключ в любом музыкальном стиле: от
+                    простой идеи (например, фортепиано с диктофона) до
+                    полноценного инструментального трека. По желанию — запись
+                    живых инструментов.
+                  </p>
+                  <p class="service-card__note">
+                    💡 Цена зависит от сложности и стилистики.
+                  </p>
+                </div>
+              </div>
+
+              <div class="swiper-slide">
+                <div class="service-card">
+                  <h3 class="service-card__title">🎚️ Сведение</h3>
+                  <p class="service-card__price">от 25 000 ₽</p>
+                  <p class="service-card__text">
+                    Полный микс-инжиниринг: работа над балансом звука — от
+                    инструментов до вокала. Ваш трек приобретёт профессиональное
+                    звучание и станет готовым к релизу.
+                  </p>
+                  <p class="service-card__note">
+                    💡 Стоимость обсуждается индивидуально, зависит от объёма
+                    работы.
+                  </p>
+                </div>
+              </div>
+
+              <div class="swiper-slide">
+                <div class="service-card">
+                  <h3 class="service-card__title">🔊 Мастеринг</h3>
+                  <p class="service-card__price">от 7 000 ₽</p>
+                  <p class="service-card__text">
+                    Финальный штрих — мастеринг готовой фонограммы. Приведём
+                    трек к стандартам цифровых платформ и подготовим к релизу.
+                  </p>
+                </div>
+              </div>
+
+              <div class="swiper-slide">
+                <div class="service-card">
+                  <h3 class="service-card__title">💼 Полный продакшен трека</h3>
+                  <p class="service-card__text">
+                    Всё под ключ: топлайн, текст, аранжировка, запись, вокальный
+                    продакшн, сведение, мастеринг. Создадим трек с нуля и
+                    передадим готовый продукт.
+                  </p>
+                  <p class="service-card__note">
+                    💡 Стоимость обсуждается индивидуально, зависит от объёма
+                    работы.
+                  </p>
+                </div>
+              </div>
+
+              <div class="swiper-slide">
+                <div class="service-card">
+                  <h3 class="service-card__title">
+                    ⭐ Полное продюсирование артиста
+                  </h3>
+                  <p class="service-card__text">
+                    Комплексный подход для артистов, которые хотят не просто
+                    трек, а карьеру: создание треков, работа над стилем и
+                    имиджем, съёмки, подготовка релизов, дистрибуция, маркетинг
+                    и аналитика.
+                  </p>
+                  <p class="service-card__note">
+                    Цена обсуждается индивидуально.
+                  </p>
+                </div>
+              </div>
+            </div>
+
+            <!-- Навигация -->
+            <div class="swiper-button-prev"></div>
+            <div class="swiper-button-next"></div>
+          </div>
+
+          <div class="services__contact">
+            <button class="services__button">Хотите обсудить проект?</button>
+          </div>
+        </div>
+      </section>
+
+      <section class="contacts" id="contact">
+        <div class="container">
+          <div class="contacts__content">
+            <div class="contacts__info">
+              <h2 class="contacts__title">Контакты</h2>
+
+              <div class="contacts__block">
+                <h3 class="contacts__subtitle">Связь со мной</h3>
+                <a href="tel:+79085167137" class="contacts__phone"
+                  >+7 908 516 71 37</a
+                >
+                <a
+                  href="mailto:sergeytitovmusic@gmail.com?subject=Хочу%20сотрудничать&body=Здравствуйте!"
+                  class="contacts__email"
+                >
+                  sergeytitovmusic@gmail.com</a
+                >
+              </div>
+
+              <div class="contacts__socials">
+                <a href="https://t.me/sergeytitovmusic" target="_blank"
+                  ><img src="./images/icon-telegram.png" alt="Telegram"
+                /></a>
+                <a href="https://wa.me/79085167137" target="_blank"
+                  ><img src="./images/icon-whatsapp.png" alt="Whatsapp"
+                /></a>
+              </div>
+              <div class="contacts__footer">
+                <div class="contacts__footer-left">
+                  <p>Подписаться на меня в социальных сетях</p>
+                  <div class="contacts__footer-links">
+                    <a href="https://t.me/sergeytitovlive" target="_blank"
+                      ><img src="./images/icon-telegram.png" alt="Telegram"
+                    /></a>
+                    <a
+                      href="https://www.instagram.com/sergeytitovmusic"
+                      target="_blank"
+                      ><img src="./images/icon-instagram.png" alt="Instagram"
+                    /></a>
+                    <a href="https://m.vk.com/sergeyrecord" target="_blank"
+                      ><img src="./images/icon-vk.png" alt="ВКонтакте"
+                    /></a>
+                  </div>
+                </div>
+
+                <div class="contacts__footer-right">
+                  <p>Слушать музыку на площадках</p>
+                  <div class="contacts__footer-links">
+                    <a href="#"
+                      ><img
+                        src="./images/icons/apple-music.svg"
+                        alt="Apple Music"
+                    /></a>
+                    <a href="#"
+                      ><img
+                        src="./images/icons/soundcloud.svg"
+                        alt="SoundCloud"
+                    /></a>
+                    <a href="#"
+                      ><img src="./images/icons/youtube.svg" alt="YouTube"
+                    /></a>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <!-- Модальное окно для отправки заявок -->
+      <div class="modal" id="requestModal">
+        <div class="modal__overlay"></div>
+        <div class="modal__content">
+          <button class="modal__close">&times;</button>
+          <h2 class="modal__title">Оставьте заявку</h2>
+
+          <form class="modal__form" id="requestForm">
+            <input type="text" name="name" placeholder="Ваше имя" required />
+            <input type="tel" name="phone" placeholder="Ваш телефон" required />
+
+            <div class="custom-select" data-name="service">
+              <div class="custom-select__selected">Выберите услугу</div>
+              <div class="custom-select__options">
+                <div class="custom-select__option" data-value="Аранжировка">
+                  Аранжировка
+                </div>
+                <div class="custom-select__option" data-value="Сведение">
+                  Сведение
+                </div>
+                <div class="custom-select__option" data-value="Мастеринг">
+                  Мастеринг
+                </div>
+                <div class="custom-select__option" data-value="Продакшен трека">
+                  Продакшен трека
+                </div>
+                <div
+                  class="custom-select__option"
+                  data-value="Продюсирование артиста"
+                >
+                  Продюсирование артиста
+                </div>
+                <div class="custom-select__option" data-value="Другое">
+                  Другое
+                </div>
+              </div>
+            </div>
+            <input type="hidden" name="service" required />
+
+            <textarea
+              name="comment"
+              placeholder="Ваш комментарий"
+              rows="4"
+            ></textarea>
+
+            <label class="modal__checkbox">
+              <input type="checkbox" name="consent" required />
+              <span class="modal__checkbox-text">
+                Я согласен на обработку персональных данных
+              </span>
+            </label>
+
+            <button type="submit" class="modal__submit">Отправить</button>
+          </form>
+
+          <!-- Галочка успешной отправки -->
+          <div class="success-checkmark" id="successCheck">
+            <div class="check-icon">
+              <span class="icon-line line-tip"></span>
+              <span class="icon-line line-long"></span>
+              <div class="icon-circle"></div>
+              <div class="icon-fix"></div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </main>
+
+    <footer class="footer">
+      <div class="container">
+        <div class="footer__content">
+          <div class="footer__links">
+            <a href="/privacy-policy.html" target="_blank"
+              >Политика конфиденциальности</a
+            >
+            <div class="footer__socials">
+              <a href="tel:+79085167137" title="Позвонить">
+                <img src="./images/icon-tel.png" alt="Телефон" />
+              </a>
+
+              <a href="mailto:sergeytitovmusic@gmail.com" target="_blank">
+                <img src="./images/icon-e-mail.png" alt="Email" />
+              </a>
+
+              <a href="https://t.me/sergeytitovmusic" target="_blank">
+                <img src="./images/icon-telegram.png" alt="Telegram" />
+              </a>
+
+              <a href="https://wa.me/79085167137" target="_blank">
+                <img src="./images/icon-whatsapp.png" alt="Whatsapp" />
+              </a>
+            </div>
+            <a href="/data-processing.html" target="_blank"
+              >Обработка персональных данных</a
+            >
+          </div>
+
+          <div class="footer__bottom">© 2025 Все права защищены</div>
+        </div>
+      </div>
+    </footer>
+
+    <script src="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.js"></script>
+    <script src="./interactive.js"></script>
+  </body>
+</html>
