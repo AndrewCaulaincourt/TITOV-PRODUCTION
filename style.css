@@ -137,7 +137,7 @@ body {
 /* Блок с фото */
 /* Блок с фото */
 .hero {
-  background-image: url("/images/hero-bg.jpg"); /* твой фон */
+  background-image: url("./images/hero-bg.jpg"); /* твой фон */
   background-size: cover;
   background-position: center;
   color: #fff;
@@ -992,7 +992,7 @@ video#video {
 /* Контакты */
 .contacts {
   position: relative;
-  background: url(/images/untitled-6422.jpg) center/cover no-repeat;
+  background: url(./images/untitled-6422.jpg) center/cover no-repeat;
   color: #fff;
 }
 
