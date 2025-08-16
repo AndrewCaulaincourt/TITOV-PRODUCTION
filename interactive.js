@@ -262,7 +262,6 @@ new Swiper(".services-swiper", {
 // ============================
 // Модалка
 // ============================
-// Модалка ==============
 const openModalButtons = [
   document.querySelector(".header__button"),
   document.querySelector(".services__button"),
@@ -272,6 +271,8 @@ const modalOverlay = modal.querySelector(".modal__overlay");
 const modalClose = modal.querySelector(".modal__close");
 const requestForm = document.getElementById("requestForm");
 const successCheck = document.getElementById("successCheck");
+const modalTitle = modal.querySelector(".modal__title");
+const modalContent = modal.querySelector(".modal__content");
 
 function openModal() {
   modal.classList.add("active");
@@ -288,75 +289,122 @@ modalOverlay.addEventListener("click", closeModal);
 modalClose.addEventListener("click", closeModal);
 document.addEventListener("keydown", (e) => e.key === "Escape" && closeModal());
 
-// === Отправка в Telegram ===
+// ================================================
+// Кастомный select (список услуг в модалке)
+// ================================================
+function initCustomSelects() {
+  document.querySelectorAll(".custom-select").forEach((select) => {
+    const selected = select.querySelector(".custom-select__selected");
+    const options = select.querySelector(".custom-select__options");
+    const hiddenInput = select.nextElementSibling; // input type=hidden
+
+    // Открыть/закрыть
+    selected.addEventListener("click", () => {
+      document.querySelectorAll(".custom-select").forEach((s) => {
+        if (s !== select) s.classList.remove("open");
+      });
+      select.classList.toggle("open");
+    });
+
+    // Выбор опции
+    options.querySelectorAll(".custom-select__option").forEach((option) => {
+      option.addEventListener("click", () => {
+        selected.textContent = option.textContent;
+        hiddenInput.value = option.dataset.value;
+        select.classList.remove("open");
+      });
+    });
+  });
+
+  // Закрытие при клике вне
+  document.addEventListener("click", (e) => {
+    if (!e.target.closest(".custom-select")) {
+      document
+        .querySelectorAll(".custom-select")
+        .forEach((s) => s.classList.remove("open"));
+    }
+  });
+}
+
+// Инициализация при загрузке страницы
+initCustomSelects();
+
+// ============================
+// Отправка в Telegram
+// ============================
 requestForm.addEventListener("submit", async (e) => {
   e.preventDefault();
 
-  const token = "ТОКЕН_БОТА"; // Заменить на реальный токен
-  const chatId = "ID_ЧАТА"; // Заменить на chat_id артиста
+  const submitBtn = requestForm.querySelector(".modal__submit");
+  const prevText = submitBtn?.textContent;
+
+  // Включаем "загрузка"
+  if (submitBtn) {
+    submitBtn.textContent = "Отправляем…";
+    submitBtn.classList.add("loading");
+    submitBtn.disabled = true;
+  }
+
   const formData = new FormData(requestForm);
 
-  const text = `
-Новая заявка с сайта:
-Имя: ${formData.get("name")}
-Телефон: ${formData.get("phone")}
-Услуга: ${formData.get("service")}
-Комментарий: ${formData.get("comment")}
-  `;
+  // Таймаут запроса (12с)
+  const controller = new AbortController();
+  const timeoutId = setTimeout(() => controller.abort(), 12000);
 
   try {
-    await fetch(`https://api.telegram.org/bot${token}/sendMessage`, {
+    const res = await fetch("http://localhost:3000/send", {
       method: "POST",
       headers: { "Content-Type": "application/json" },
-      body: JSON.stringify({ chat_id: chatId, text }),
+      body: JSON.stringify({
+        name: formData.get("name"),
+        phone: formData.get("phone"),
+        service: formData.get("service"),
+        comment: formData.get("comment") || "",
+      }),
+      signal: controller.signal,
     });
 
-    // Показываем галочку
+    const data = await res.json().catch(() => ({}));
+
+    if (!res.ok || !data.ok) {
+      throw new Error(
+        data.error || data.message || "Не удалось отправить заявку"
+      );
+    }
+
+    // Успех
+    modalTitle.textContent = "ЗАЯВКА ОТПРАВЛЕНА";
+    modalContent.classList.add("modal__content--success");
+
     requestForm.style.display = "none";
     successCheck.classList.add("active");
 
-    // Через 2 секунды закрываем
     setTimeout(() => {
       successCheck.classList.remove("active");
       requestForm.reset();
       requestForm.style.display = "flex";
+
+      // Вернём исходный заголовок и состояние модалки
+      modalTitle.textContent = "Оставьте заявку";
+      modalContent.classList.remove("modal__content--success");
       closeModal();
-    }, 2000);
-  } catch (error) {
-    alert("Ошибка отправки. Попробуйте позже.");
-  }
-});
+    }, 5000);
+  } catch (err) {
+    if (err.name === "AbortError") {
+      alert("Сервер отвечает слишком долго. Попробуйте ещё раз.");
+    } else {
+      alert(err.message || "Сеть недоступна или сервер не запущен.");
+      console.error(err);
+    }
+  } finally {
+    clearTimeout(timeoutId);
 
-// === Кастомный select ===
-document.querySelectorAll(".custom-select").forEach((select) => {
-  const selected = select.querySelector(".custom-select__selected");
-  const options = select.querySelector(".custom-select__options");
-  const hiddenInput = select.nextElementSibling; // input type=hidden
-
-  // Открыть/закрыть
-  selected.addEventListener("click", () => {
-    document.querySelectorAll(".custom-select").forEach((s) => {
-      if (s !== select) s.classList.remove("open");
-    });
-    select.classList.toggle("open");
-  });
-
-  // Выбор опции
-  options.querySelectorAll(".custom-select__option").forEach((option) => {
-    option.addEventListener("click", () => {
-      selected.textContent = option.textContent;
-      hiddenInput.value = option.dataset.value;
-      select.classList.remove("open");
-    });
-  });
-});
-
-// Закрытие при клике вне
-document.addEventListener("click", (e) => {
-  if (!e.target.closest(".custom-select")) {
-    document
-      .querySelectorAll(".custom-select")
-      .forEach((s) => s.classList.remove("open"));
+    // Выключаем "загрузка"
+    if (submitBtn) {
+      submitBtn.textContent = prevText || "Отправить";
+      submitBtn.classList.remove("loading");
+      submitBtn.disabled = false;
+    }
   }
 });
 
@@ -386,29 +434,82 @@ gsap.utils.toArray(".photo-gallery__item").forEach((item, i) => {
   );
 });
 
-// ========================
-// Галлерея фотографий
-// ========================
-document.addEventListener("DOMContentLoaded", (event) => {
-  gsap.registerPlugin(ScrollTrigger);
+// ============================
+// Фото-галерея с модалкой
+// ============================
+(() => {
+  const galleryImages = Array.from(
+    document.querySelectorAll(".photo-gallery .gallery img")
+  );
+  const lightbox = document.getElementById("photoLightbox");
+  const lightboxImg = lightbox?.querySelector(".photo-lightbox__img");
+  const btnClose = lightbox?.querySelector(".photo-lightbox__close");
+  const btnPrev = lightbox?.querySelector(".photo-lightbox__prev");
+  const btnNext = lightbox?.querySelector(".photo-lightbox__next");
+  let idx = -1;
 
-  const galleryContainer = document.querySelector(".gallery");
-  const galleryItems = gsap.utils.toArray(".gallery-slide");
-  const galleryWidth =
-    galleryItems.length * (window.innerWidth * 0.9 + 50) - 50 + 200;
-  galleryContainer.style.width = `${galleryWidth}px`;
+  if (!galleryImages.length || !lightbox || !lightboxImg) return;
 
-  let horizontalScroll = gsap.to(galleryContainer, {
-    x: () => -(galleryWidth - window.innerWidth),
-    ease: "none",
-    scrollTrigger: {
-      trigger: ".photo-gallery",
-      start: "top 130px",
-      end: () => `+=${galleryWidth}`,
-      pin: true,
-      scrub: 1,
-      invalidateOnRefresh: true,
-      anticipatePin: 1,
-    },
+  const open = (i) => {
+    idx = (i + galleryImages.length) % galleryImages.length;
+    lightboxImg.classList.remove("fade");
+    lightboxImg.src = galleryImages[idx].src;
+    requestAnimationFrame(() => lightboxImg.classList.add("fade"));
+    lightbox.classList.add("active");
+    document.body.style.overflow = "hidden";
+  };
+
+  const close = () => {
+    lightbox.classList.remove("active");
+    document.body.style.overflow = "";
+  };
+
+  const prev = () => open(idx - 1);
+  const next = () => open(idx + 1);
+
+  galleryImages.forEach((img, i) => {
+    img.addEventListener("click", () => open(i));
   });
+
+  btnClose?.addEventListener("click", close);
+  btnPrev?.addEventListener("click", prev);
+  btnNext?.addEventListener("click", next);
+
+  lightbox.addEventListener("click", (e) => {
+    if (e.target === lightbox) close(); // клик по фону
+  });
+
+  document.addEventListener("keydown", (e) => {
+    if (!lightbox.classList.contains("active")) return;
+    if (e.key === "Escape") close();
+    if (e.key === "ArrowLeft") prev();
+    if (e.key === "ArrowRight") next();
+  });
+})();
+
+// Мобильное меню (бургер)
+const burger = document.querySelector(".header__burger");
+const headerNav = document.querySelector(".header__nav");
+
+burger?.addEventListener("click", () => {
+  headerNav?.classList.toggle("open");
+  document.body.style.overflow = headerNav?.classList.contains("open")
+    ? "hidden"
+    : "";
+});
+
+// Закрываем меню по клику на пункт
+navLinks.forEach((link) =>
+  link.addEventListener("click", () => {
+    headerNav?.classList.remove("open");
+    document.body.style.overflow = "";
+  })
+);
+
+// Закрываем по Esc
+document.addEventListener("keydown", (e) => {
+  if (e.key === "Escape") {
+    headerNav?.classList.remove("open");
+    document.body.style.overflow = "";
+  }
 });

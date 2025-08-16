@@ -15,10 +15,13 @@
     />
   </head>
   <body>
+    <a id="top"></a>
     <header class="header">
       <div class="container">
         <div class="header__menu">
-          <h2 class="header__title">TITOV PRODUCTION</h2>
+          <h2 class="header__title">
+            <a href="#top">TITOV PRODUCTION</a>
+          </h2>
 
           <nav class="header__nav">
             <ul class="header__list">
@@ -37,6 +40,10 @@
               </li>
             </ul>
           </nav>
+
+          <button class="header__burger" aria-label="Открыть меню">
+            <span></span>
+          </button>
 
           <div>
             <button class="header__button">Оставить заявку</button>
@@ -152,12 +159,13 @@
       <section id="portfolio">
         <section class="audio-player" id="portfolio-audio">
           <div class="container">
-            <h2 class="audio-player__title">Музыкальные платформы и треки</h2>
+            <h2 class="audio__title">Портфолио</h2>
+            <h3 class="audio-player__title">Музыкальные платформы и треки</h3>
             <div class="audio-player__content">
               <div class="audio-player__grid">
                 <!-- Яндекс Музыка -->
                 <div class="audio-player__card">
-                  <h3 class="audio-player__subtitle">Yandex Music</h3>
+                  <h4 class="audio-player__subtitle">Yandex Music</h4>
                   <a
                     href="https://music.yandex.ru/artist/439874?utm_source=web&utm_medium=copy_link"
                     target="_blank"
@@ -171,7 +179,7 @@
 
                 <!-- VK Музыка -->
                 <div class="audio-player__card">
-                  <h3 class="audio-player__subtitle">VK Music</h3>
+                  <h4 class="audio-player__subtitle">VK Music</h4>
                   <a
                     href="https://vk.com/artist/titov"
                     target="_blank"
@@ -185,7 +193,7 @@
 
                 <!-- Spotify -->
                 <div class="audio-player__card">
-                  <h3 class="audio-player__subtitle">Spotify</h3>
+                  <h4 class="audio-player__subtitle">Spotify</h4>
                   <a
                     href="https://open.spotify.com/artist/3SuQprUc8N1kIOs2Hm2mAk?si=7XhFvVFsTAmquvgoHPnTlg"
                     target="_blank"
@@ -199,7 +207,7 @@
 
                 <!-- Apple Music -->
                 <div class="audio-player__card">
-                  <h3 class="audio-player__subtitle">Apple Music</h3>
+                  <h4 class="audio-player__subtitle">Apple Music</h4>
                   <a
                     href="https://music.apple.com/us/artist/titov/375428776"
                     target="_blank"
@@ -216,7 +224,7 @@
               <div class="custom-audio-player__container">
                 <!-- Левая колонка: плейлист -->
                 <div class="custom-audio-player__playlist">
-                  <h3 class="custom-audio-player__title">Треки</h3>
+                  <h4 class="custom-audio-player__title">Треки</h4>
 
                   <ul class="custom-audio-player__list">
                     <li
@@ -417,7 +425,7 @@
 
         <section class="video-player" id="portfolio-video">
           <div class="container">
-            <h2 class="video-player__title">Проекты, где я участвовал</h2>
+            <h3 class="video-player__title">Проекты, где я участвовал</h3>
             <div class="custom-video-player__container">
               <!-- Левая колонка: плейлист -->
               <div class="custom-video-player__playlist">
@@ -490,19 +498,6 @@
                       <span>3:00</span>
                     </div>
                   </li>
-
-                  <li
-                    class="custom-video-player__item"
-                    data-src="./video/video7.mp4"
-                  >
-                    <img src="./images/preview7.jpg" alt="Превью видео 2" />
-                    <div class="custom-video-player__info">
-                      <p>
-                        SHAMAN "Прямо по сердцу" КЛИП Музыка и слова М.Фадеев
-                      </p>
-                      <span>3:08</span>
-                    </div>
-                  </li>
                 </ul>
               </div>
 
@@ -531,36 +526,39 @@
 
         <section class="photo-gallery" id="portfolio-gallery">
           <div class="container">
+            <h3 class="gallery-title">История в кадрах: от трека до триумфа</h3>
             <div class="gallery">
               <div class="gallery-slide">
-                <img src="images/R5M_2228.jpg" class="h" alt="gallery image" />
-                <img src="images/slide8.jpg" class="h" alt="gallery image" />
-                <img src="images/slide1.jpg" class="v" alt="gallery image" />
-                <img src="images/R5M_0791.jpg" class="h" alt="gallery image" />
-                <img src="images/R5M_0834.jpg" class="h" alt="gallery image" />
+                <img src="./images/R5M_2228.jpg" alt="gallery image" />
+                <img src="./images/slide8.jpg" alt="gallery image" />
+                <img src="./images/slide6.jpg" alt="gallery image" />
+                <img src="./images/R5M_0791.jpg" alt="gallery image" />
+                <img src="./images/R5M_0834.jpg" alt="gallery image" />
               </div>
 
               <div class="gallery-slide">
-                <img src="images/slide7.jpg" class="h" alt="gallery image" />
-                <img src="images/R5M_1450.jpg" class="h" alt="gallery image" />
-                <img src="images/slide5.jpg" class="v" alt="gallery image" />
-                <img src="images/R5M_0192.jpg" class="h" alt="gallery image" />
-                <img src="images/R5M_2228.jpg" class="h" alt="gallery image" />
+                <img src="./images/slide7.jpg" alt="gallery image" />
+                <img src="./images/R5M_1450.jpg" alt="gallery image" />
+                <img src="./images/slide5.jpg" alt="gallery image" />
+                <img src="./images/R5M_0192.jpg" alt="gallery image" />
+                <img src="./images/R5M_2228.jpg" alt="gallery image" />
               </div>
-              <!--
-            <div class="gallery-slide">
-              <img src="images/slide11.jpeg" class="v" alt="gallery image" />
-              <img src="images/slide12.jpeg" class="v" alt="gallery image" />
-            </div>
-            <div class="gallery-slide">
-              <img src="images/slide9.jpeg" class="v" alt="gallery image" />
 
-              <img src="images/slide10.jpeg" class="v" alt="gallery image" />
-              <img src="images/slide6.jpg" class="v" alt="gallery image" />
-              <img src="images/slide2.jpg" class="v" alt="gallery image" />
-              <img src="images/slide4.jpg" class="v" alt="gallery image" />
-              <img src="images/slide3.jpg" class="v" alt="gallery image" />
-            </div>-->
+              <div class="gallery-slide">
+                <img src="./images/slide9.jpeg" alt="gallery image" />
+                <img src="./images/slide12.jpeg" alt="gallery image" />
+                <img src="./images/slide11.jpeg" alt="gallery image" />
+                <img src="./images/slide4.jpg" alt="gallery image" />
+                <img src="./images/untitled-6422.jpg" alt="gallery image" />
+              </div>
+
+              <div class="gallery-slide">
+                <img src="./images/slide10.jpeg" alt="gallery image" />
+                <img src="./images/slide3.jpg" alt="gallery image" />
+                <img src="./images/slide2.jpg" alt="gallery image" />
+                <img src="./images/slide13.jpg" alt="gallery image" />
+                <img src="./images/slide14.jpg" alt="gallery image" />
+              </div>
             </div>
           </div>
         </section>
@@ -741,7 +739,7 @@
         <div class="modal__overlay"></div>
         <div class="modal__content">
           <button class="modal__close">&times;</button>
-          <h2 class="modal__title">Оставьте заявку</h2>
+          <h2 class="modal__title" id="modalTitle">Оставьте заявку</h2>
 
           <form class="modal__form" id="requestForm">
             <input type="text" name="name" placeholder="Ваше имя" required />
